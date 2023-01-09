@@ -17,24 +17,6 @@ public class Grid {
         final int index = neighborCells.indexOf(cell);
 
         return (index == -1) ? 0 : neighborCells.get(index).getNumberOfNeighbors();
-
-        /*
-        int numNeighbors = 0;
-        final int x = cell.getX();
-        final int y = cell.getY();
-
-        for (Cell gridCell : cells) {
-            final int gridX = gridCell.getX();
-            final int gridY = gridCell.getY();
-
-            if (((x == gridX || x == gridX-1 || x == gridX+1) && (y == gridY-1 || y == gridY+1)) ||
-                (y == gridY || y == gridY-1 || y == gridY+1) && (x == gridX-1 || x == gridX+1)) {
-                numNeighbors++;
-            }
-        }
-
-        return numNeighbors;
-        */
     }
 
     public void addCell(Cell cell) {
