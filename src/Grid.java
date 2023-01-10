@@ -88,24 +88,20 @@ public class Grid {
     }
 
     public void applyRules() {
-        final List<Integer> deadCellsIndexList = new ArrayList<>();
-
         for (int i = cells.size() - 1; i >= 0; i--) {
             final Cell cell = cells.get(i);
-            final int numNeighbors = numNeighbors(cell);
+            final int numberOfNeighbors = numNeighbors(cell);
 
-            if (numNeighbors < 2 || numNeighbors > 3) {
-                deadCellsIndexList.add(i);
+            if (numberOfNeighbors < 2 || numberOfNeighbors > 3) {
+                cells.remove(i);
             }
         }
 
-        for (int i : deadCellsIndexList) {
-            cells.remove(i);
-        }
+        for (Cell neighborCell : neighborCells) {
+            final int numberOfNeighbors = neighborCell.getNumberOfNeighbors();
 
-        for (Cell cell : neighborCells) {
-            if (cell.getNumberOfNeighbors() == 3) {
-                cells.add(cell);
+            if (numberOfNeighbors == 3 && !cells.contains(neighborCell)) {
+                cells.add(neighborCell);
             }
         }
     }
