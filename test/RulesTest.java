@@ -37,15 +37,6 @@ public class RulesTest {
     public void livingCellWithMoreThan3Neighbors_dies() {
         final Grid grid = new Grid();
 
-        //       -2   -1   0   1   2
-        //
-        //   -1   1    2   3   2   1
-        //    0   1  -1,0 0,0 1,0  2
-        //    1   0    3  0,1 1,1  2
-        //    2   0    1   2   2   1
-        //
-        // 3 4 3
-
         grid.addCell(new Cell(0, 0));
         grid.addCell(new Cell(0, 1));
         grid.addCell(new Cell(1, 0));
