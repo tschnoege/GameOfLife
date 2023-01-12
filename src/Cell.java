@@ -40,7 +40,7 @@ public class Cell {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        return Objects.hash(y, x);
     }
 
     public void increaseNeighbors() {
@@ -49,5 +49,10 @@ public class Cell {
 
     public void decreaseNeighbors() {
         numNeighbors--;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " -> [" + x + ", " + y + "]";
     }
 }

@@ -13,7 +13,7 @@ class GridTest {
         grid.addCell(new Cell(2, 3));
         assertTrue(grid.hasCell(2, 3), "get cell that was added before");
 
-        grid.remove(new Cell(2, 3));
+        grid.removeCell(new Cell(2, 3));
         assertFalse(grid.hasCell(2, 3), "cell 2,3 was removed");
     }
 
